@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Página no encontrada | Ascenda</title>
+  <meta name="robots" content="noindex">
+  <meta name="color-scheme" content="dark light">
+  <link rel="icon" type="image/png" sizes="64x64" href="/assets/favicon.png">
+  <style>
+    :root { --bg:#050B1A; --fg:#CDE3FF; --glow:#6CA8F0; --cobalt:#1F5BC6; --ease:cubic-bezier(.23,1,.32,1); }
+    @media (prefers-color-scheme: light) { :root { --bg:#F4F8FF; --fg:#0A1A3A; --glow:#1F5BC6; } }
+    * { box-sizing: border-box; }
+    body { margin:0; min-height:100vh; display:grid; place-items:center; padding:24px; background:var(--bg); color:var(--fg);
+           font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif; text-align:center; }
+    main { max-width:32rem; }
+    img { width:72px; height:72px; margin-bottom:8px; }
+    h1 { font-size:clamp(4rem,18vw,7rem); margin:0; line-height:1; color:var(--glow); font-variant-numeric:tabular-nums; }
+    p { font-size:1.125rem; line-height:1.5; margin:12px 0 28px; text-wrap:balance; }
+    a { display:inline-block; padding:14px 28px; border-radius:999px; background:var(--cobalt); color:#fff; text-decoration:none; font-weight:600;
+        transition:transform .2s var(--ease); }
+    a:hover { transform:translateY(-2px); }
+    a:active { transform:scale(.97); }
+    @media (prefers-reduced-motion: reduce) { a { transition:none; } }
+  </style>
+</head>
+<body>
+  <main>
+    <img src="/assets/logo.png" alt="Ascenda" width="72" height="72">
+    <h1>404</h1>
+    <p>Esta página no existe o se movió. Volvamos al inicio.</p>
+    <a href="/">Ir al inicio</a>
+  </main>
+</body>
+</html>

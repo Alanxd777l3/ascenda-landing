@@ -1,0 +1,22 @@
+# Ascenda
+
+> Ascenda automatiza la captación de clientes, el seguimiento de ventas, las citas, el CRM, la facturación y la página web de negocios en República Dominicana. Prueba gratis de 7 días.
+
+## Servicios
+- Captación de clientes (formularios, hoja de leads, avisos)
+- Seguimiento de ventas y recordatorios automáticos
+- Citas y agenda
+- CRM
+- Facturación y cobros (ASCENDA System, para todo tipo de negocio)
+- Página web personalizada
+- QR personalizado
+- Google NFC stand review (stand NFC para reseñas en Google; pago único de RD$3,000)
+
+## Contacto
+- Correo: ascenda.rd@gmail.com
+- Instagram: https://www.instagram.com/ascenda.do/
+
+## Páginas
+- [Inicio](index.html)
+- [Política de privacidad](privacidad.html)
+- [Términos](terminos.html)

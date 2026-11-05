@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="es" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Automatización para negocios: captación, seguimiento y cobros | Ascenda</title>
+  <meta name="description" content="Automatizamos la captación de clientes, el seguimiento de ventas, las citas, el CRM, la facturación y la página web de tu negocio. Menos trabajo manual, más ventas. Prueba gratis 7 días.">
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#03060F">
+  <!-- PENDIENTE: reemplazar https://www.PENDIENTE.com por el dominio real en canonical y Open Graph -->
+  <link rel="canonical" href="https://www.PENDIENTE.com/">
+
+  <!-- Open Graph / redes sociales -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:site_name" content="Ascenda">
+  <meta property="og:title" content="Automatiza la captación, el seguimiento y el cobro de tus clientes">
+  <meta property="og:description" content="Sistemas automáticos que trabajan 24/7 para tu negocio: leads, ventas, citas, CRM, facturación y páginas web.">
+  <meta property="og:url" content="https://www.PENDIENTE.com/">
+  <meta property="og:image" content="https://www.PENDIENTE.com/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Ascenda: automatización para negocios">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Automatiza la captación, el seguimiento y el cobro de tus clientes">
+  <meta name="twitter:description" content="Sistemas automáticos que trabajan 24/7 para tu negocio: leads, ventas, citas, CRM, facturación y páginas web.">
+  <meta name="twitter:image" content="https://www.PENDIENTE.com/assets/og-image.png">
+  <link rel="alternate" type="text/plain" href="llms.txt" title="llms.txt">
+  <!-- Datos estructurados. PENDIENTE: reemplazar https://www.PENDIENTE.com por el dominio real y agregar "telephone" cuando exista -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"ProfessionalService","name":"Ascenda","description":"Automatización online para negocios: captación de clientes, seguimiento de ventas, citas, CRM, facturación y páginas web.","url":"https://www.PENDIENTE.com/","logo":"https://www.PENDIENTE.com/assets/logo.png","image":"https://www.PENDIENTE.com/assets/og-image.png","email":"ascenda.rd@gmail.com","areaServed":{"@type":"Country","name":"República Dominicana"},"availableLanguage":"es","sameAs":["https://www.instagram.com/ascenda.do/"]}
+  </script>
+
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/logo.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+  <!-- Aplica el tema guardado (claro/oscuro) antes de pintar, para evitar parpadeos -->
+  <script>
+    (function () {
+      var root = document.documentElement;
+      root.classList.replace('no-js', 'js');
+      // Entrada animada: tapa la página desde el primer cuadro (main.js la reproduce y la quita)
+      var quieto = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!quieto && !location.hash) {
+        root.classList.add('intro-play', 'intro-mark-hidden');
+        try { history.scrollRestoration = 'manual'; } catch (e) {}
+        // Respaldo: si algo falla, la página se muestra igual a los 12 s
+        window.ascendaIntroRespaldo = setTimeout(function () { root.classList.remove('intro-play', 'intro-mark-hidden'); }, 12000);
+      }
+      try {
+        var tema = localStorage.getItem('ascenda-tema');
+        if (tema === 'light' || tema === 'dark') root.setAttribute('data-theme', tema);
+      } catch (e) {}
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@600;700;800&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <script src="js/vendor/lenis.min.js" defer></script>
+  <script src="js/config.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <!-- Iconos SVG reutilizables -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="i-user-plus" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></symbol>
+      <symbol id="i-send" viewBox="0 0 24 24"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7z"/></symbol>
+      <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/><path d="m9 16 2 2 4-4"/></symbol>
+      <symbol id="i-users" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+      <symbol id="i-card" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h4"/></symbol>
+      <symbol id="i-nfc" viewBox="0 0 24 24"><rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M10.5 18.5h3"/><path d="M5 8.5a5 5 0 0 0 0 5M19 8.5a5 5 0 0 1 0 5"/><path d="m12 6.8.7 1.5 1.6.2-1.2 1.1.3 1.6-1.4-.8-1.4.8.3-1.6-1.2-1.1 1.6-.2z"/></symbol>
+      <symbol id="i-qr" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3M21 14v.01M14 21h3M21 18v3h-1M17 17h1"/></symbol>
+      <symbol id="i-browser" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M2 8h20M6 5.5h.01M9 5.5h.01"/><path d="m9 13-2 2 2 2M15 13l2 2-2 2"/></symbol>
+      <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 5-6"/></symbol>
+      <symbol id="i-filter" viewBox="0 0 24 24"><path d="M22 3H2l8 9.46V19l4 2v-8.54L22 3z"/></symbol>
+      <symbol id="i-check-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m8.5 12 2.5 2.5 4.5-5"/></symbol>
+      <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+      <symbol id="i-zap" viewBox="0 0 24 24"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></symbol>
+      <symbol id="i-user-check" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="m16 11 2 2 4-4"/></symbol>
+      <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2 10 5-10 5L2 7l10-5z"/><path d="m2 17 10 5 10-5M2 12l10 5 10-5"/></symbol>
+      <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-2.64-6.36L21 8"/><path d="M21 3v5h-5"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+      <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+      <symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></symbol>
+      <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></symbol>
+      <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></symbol>
+      <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+      <symbol id="i-quote" viewBox="0 0 24 24"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.76-2.02-2-2H4c-1.25 0-2 .75-2 2v6c0 1.25.75 2 2 2h3c0 3-1 5-4 5v3zM14 21c3 0 7-1 7-8V5c0-1.25-.76-2.02-2-2h-4c-1.25 0-2 .75-2 2v6c0 1.25.75 2 2 2h3c0 3-1 5-4 5v3z"/></symbol>
+      <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></symbol>
+      <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></symbol>
+      <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></symbol>
+      <symbol id="i-tiktok" viewBox="0 0 24 24"><path d="M9 12a4 4 0 1 0 4 4V3a5 5 0 0 0 5 5"/></symbol>
+      <symbol id="i-youtube" viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><path d="m9.75 15.02 5.75-3.27-5.75-3.27v6.54z"/></symbol>
+      <symbol id="i-whatsapp" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35zM12.04 21.5h-.01a9.45 9.45 0 0 1-4.82-1.32l-.35-.21-3.58.94.96-3.49-.23-.36a9.43 9.43 0 0 1-1.45-5.03c0-5.22 4.25-9.47 9.48-9.47 2.53 0 4.91.99 6.7 2.78a9.41 9.41 0 0 1 2.77 6.7c0 5.22-4.25 9.47-9.47 9.47zm8.06-17.53A11.33 11.33 0 0 0 12.04.63C5.76.63.65 5.74.65 12.02c0 2.01.52 3.97 1.52 5.69L.55 23.6l6.03-1.58a11.36 11.36 0 0 0 5.45 1.39h.01c6.28 0 11.39-5.11 11.39-11.39 0-3.04-1.19-5.9-3.33-8.05z"/></symbol>
+    </defs>
+  </svg>
+
+
+  <!-- ENTRADA: al abrir o recargar, el logo se arma como en el video de marca
+       y se convierte en el logo del inicio. La controla main.js (initIntro);
+       sin JavaScript, con "reducir movimiento" o al entrar con un enlace #seccion no aparece. -->
+  <div class="intro">
+    <div class="intro-sky" aria-hidden="true"></div>
+    <div class="intro-lockup" aria-hidden="true">
+      <svg class="intro-logo" viewBox="488 165 560 560" focusable="false">
+        <defs>
+          <mask id="intro-arc-mask" maskUnits="userSpaceOnUse" x="440" y="500" width="660" height="280">
+            <path class="i-arc-line" d="M503 717 C580.8 639.2 702 575 812 575 C942 575 1002 662.5 1034 708" pathLength="1" fill="none" stroke="#fff" stroke-width="60" stroke-linecap="round" stroke-dasharray="1 1" stroke-dashoffset="1"/>
+          </mask>
+          <clipPath id="intro-clip-l"><rect class="i-clip-l" x="620" y="612" width="150" height="0"/></clipPath>
+          <clipPath id="intro-clip-r"><rect class="i-clip-r" x="772" y="578" width="100" height="0"/></clipPath>
+          <clipPath id="intro-shape-l"><use href="#m-sail-l-p"/></clipPath>
+          <clipPath id="intro-shape-r"><use href="#m-sail-r-p"/></clipPath>
+        </defs>
+        <circle class="i-halo" cx="768.5" cy="241.5" r="48" fill="url(#m-halo-g)" opacity="0"/>
+        <circle class="i-ring" cx="768.5" cy="241.5" r="26" fill="none" stroke="#8FBBFF" stroke-width="1.4" opacity="0"/>
+        <g mask="url(#intro-arc-mask)"><use href="#m-arc-p" fill="url(#m-arc-g)" filter="url(#m-glow)"/></g>
+        <path class="i-trail" d="M503 717 C580.8 639.2 702 575 812 575 C942 575 1002 662.5 1034 708" pathLength="1" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-dasharray="0.14 2" stroke-dashoffset="0.14" opacity="0" filter="url(#m-glow)"/>
+        <rect class="i-mast" x="767.4" y="246" width="2.2" height="320" rx="1.1" fill="url(#m-mast-g)" filter="url(#m-glow)" transform="translate(0 566) scale(1 0.001) translate(0 -566)"/>
+        <g clip-path="url(#intro-clip-l)"><use href="#m-sail-l-p" fill="url(#m-sail-l-g)" filter="url(#m-glow)"/></g>
+        <g clip-path="url(#intro-clip-r)"><use href="#m-sail-r-p" fill="url(#m-sail-r-g)" filter="url(#m-glow)"/></g>
+        <g clip-path="url(#intro-shape-l)"><rect class="i-bar i-bar-l" x="628" y="610" width="132" height="4" fill="#EAF3FF" opacity="0"/></g>
+        <g clip-path="url(#intro-shape-r)"><rect class="i-bar i-bar-r" x="774" y="576" width="96" height="4" fill="#EAF3FF" opacity="0"/></g>
+        <g class="i-star" opacity="0"><use href="#m-star-p" fill="#F6FAFF" filter="url(#m-glow)"/><circle cx="768.5" cy="241.5" r="6" fill="#FFFFFF"/></g>
+        <circle class="i-comet" cx="503" cy="717" r="6" fill="#FFFFFF" filter="url(#m-glow)" opacity="0"/>
+      </svg>
+      <div class="intro-text">
+        <p class="intro-word"><span>A</span><span>S</span><span>C</span><span>E</span><span>N</span><span>D</span><span class="intro-lambda"><svg viewBox="0 0 100 100" focusable="false"><path d="M6 97 L50 7 L94 97" fill="none" stroke="currentColor" stroke-width="7.5"/></svg></span><i class="intro-spark"></i></p>
+        <p class="intro-tag"><i></i><span>Automatiza. Optimiza. <b>Asciende.</b></span><i></i></p>
+      </div>
+    </div>
+    <button type="button" class="intro-skip">Saltar intro</button>
+  </div>
+
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <!-- 1. HEADER -->
+  <header class="site-header" id="inicio">
+    <div class="header-inner">
+      <a class="brand" href="#inicio" aria-label="Ascenda, ir al inicio">
+        <img src="assets/logo.png" alt="" width="32" height="32">
+        <span class="brand-name" data-config-text="empresa.nombre">Ascenda</span>
+      </a>
+
+      <nav class="main-nav" id="menu-principal" aria-label="Menú principal">
+        <ul>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#sistema">Sistema</a></li>
+          <li><a href="#como-funciona">Cómo funciona</a></li>
+          <li><a href="#beneficios">Beneficios</a></li>
+          <li><a href="#preguntas">Preguntas</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+          <li class="nav-bead" aria-hidden="true"></li>
+        </ul>
+        <a class="btn btn-primary btn-sm nav-cta" href="#agenda">Prueba 7 días gratis</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-toggle" type="button" aria-pressed="true" aria-label="Modo oscuro" title="Cambiar a modo claro">
+          <svg class="icon i-moon" aria-hidden="true"><use href="#i-moon"/></svg>
+          <svg class="icon i-sun" aria-hidden="true"><use href="#i-sun"/></svg>
+        </button>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menú">
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <!-- 2. HERO (escena): el logo de Ascenda se arma, se separa en sus
+         piezas (cada una es un servicio) y se vuelve a unir encendido. -->
+    <section class="scene scene-hero zone-dark" data-scene aria-labelledby="hero-title">
+      <div class="scene-sticky">
+        <div class="hero-bg" aria-hidden="true"></div>
+        <div class="hero-frame" aria-hidden="true"></div>
+
+        <div class="hero-mark" aria-hidden="true">
+          <!-- Cada pieza del logo es una capa aparte: al deslizar solo se
+               mueven las capas (rápido), el brillo no se vuelve a dibujar. -->
+          <svg class="m-defs" width="0" height="0" focusable="false">
+            <!-- Logo original de Ascenda, trazado del archivo de marca (estrella, mástil, dos velas y arco) -->
+            <defs>
+              <radialGradient id="m-halo-g"><stop offset="0" stop-color="#FFFFFF"/><stop offset=".12" stop-color="#DDEBFF" stop-opacity=".95"/><stop offset=".3" stop-color="#5E9BFF" stop-opacity=".7"/><stop offset=".6" stop-color="#2A66D8" stop-opacity=".18"/><stop offset="1" stop-color="#1F5BC6" stop-opacity="0"/></radialGradient>
+              <linearGradient id="m-sail-l-g" x1="0" y1="0" x2=".35" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset=".45" stop-color="#DDE9FA"/><stop offset=".7" stop-color="#B9D0F2"/><stop offset="1" stop-color="#8EB4EE"/></linearGradient>
+              <linearGradient id="m-sail-r-g" x1="0" y1="0" x2=".6" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset=".5" stop-color="#E4EDFA"/><stop offset=".78" stop-color="#C3D6F3"/><stop offset="1" stop-color="#E9F1FD"/></linearGradient>
+              <linearGradient id="m-mast-g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#CFE1FB"/></linearGradient>
+              <linearGradient id="m-arc-g" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#5E98EC"/><stop offset=".3" stop-color="#C9DCF8"/><stop offset=".55" stop-color="#F6FAFF"/><stop offset=".8" stop-color="#C9DCF8"/><stop offset="1" stop-color="#6CA2EE"/></linearGradient>
+              <filter id="m-glow" x="-40%" y="-40%" width="180%" height="180%" color-interpolation-filters="sRGB">
+                <feGaussianBlur in="SourceAlpha" stdDeviation="6" result="b"/><feFlood flood-color="#2C74F2"/><feComposite in2="b" operator="in" result="g"/>
+                <feGaussianBlur in="SourceAlpha" stdDeviation="1.4" result="b2"/><feFlood flood-color="#6FA8FF" flood-opacity=".9"/><feComposite in2="b2" operator="in" result="g2"/>
+                <feMerge><feMergeNode in="g"/><feMergeNode in="g2"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+              <path id="m-arc-p" d="M503 717 C602 618 712 569 812 569 C942 569 1004 661 1034 708 C1000 664 942 581 812 581 C692 581 559.6 660.4 503 717 Z"/>
+              <path id="m-sail-l-p" d="M746.3 382 L748.4 384.6 L706.8 566.5 L646 606.5 Z"/>
+              <path id="m-sail-r-p" d="M783.6 381.4 Q786 380 787.4 382.6 L856.5 571 Q816 563 783.2 562 Q781 561.6 781 559 L781 386 Q781 382.4 783.6 381.4 Z"/>
+              <path id="m-star-p" d="M768.5 164 C769.2 224 771 239.2 848 241.5 C771 243.8 769.2 259 768.5 320 C767.8 259 766 243.8 689 241.5 C766 239.2 767.8 224 768.5 164 Z"/>
+            </defs>
+          </svg>
+          <div class="m-layer m-halo"><svg viewBox="488 165 560 560"><circle cx="768.5" cy="241.5" r="48" fill="url(#m-halo-g)"/></svg></div>
+          <div class="m-layer m-mast"><svg viewBox="488 165 560 560"><rect x="767.4" y="246" width="2.2" height="320" rx="1.1" fill="url(#m-mast-g)" filter="url(#m-glow)"/></svg></div>
+          <div class="m-layer m-arc"><svg viewBox="488 165 560 560"><use href="#m-arc-p" fill="url(#m-arc-g)" filter="url(#m-glow)"/></svg></div>
+          <div class="m-layer m-sail-l"><svg viewBox="488 165 560 560"><use href="#m-sail-l-p" fill="url(#m-sail-l-g)" filter="url(#m-glow)"/></svg></div>
+          <div class="m-layer m-sail-r"><svg viewBox="488 165 560 560"><use href="#m-sail-r-p" fill="url(#m-sail-r-g)" filter="url(#m-glow)"/></svg></div>
+          <div class="m-layer m-star"><svg viewBox="488 165 560 560"><use href="#m-star-p" fill="#F6FAFF" filter="url(#m-glow)"/><circle cx="768.5" cy="241.5" r="6" fill="#FFFFFF"/></svg></div>
+          <span class="part-label pl-star">Captación</span>
+          <span class="part-label pl-left">Seguimiento</span>
+          <span class="part-label pl-right">Citas y CRM</span>
+          <span class="part-label pl-arc">Facturación y cobros</span>
+        </div>
+
+        <div class="hero-copy">
+          <p class="eyebrow">Automatización online para negocios</p>
+          <h1 id="hero-title">Consigue, atiende y cobra a tus clientes <span class="text-gradient">sin trabajo manual.</span></h1>
+          <p class="lead">Conectamos tus formularios, WhatsApp, agenda, CRM y facturación en un solo sistema que trabaja por ti las 24 horas, para que tú te dediques a vender.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary btn-lg" href="#agenda">Empieza tu demo gratis de 7 días <svg class="icon icon-arrow" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+            <a class="btn btn-outline btn-lg" href="#servicios">Ver servicios</a>
+          </div>
+          <ul class="hero-checks">
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Sin conocimientos técnicos</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Funciona con tus herramientas actuales</li>
+          </ul>
+        </div>
+
+        <div class="hero-mid" aria-hidden="true">
+          <p>Cada pieza de tu negocio, conectada.</p>
+          <small>Captas, das seguimiento, agendas y cobras en un mismo flujo.</small>
+        </div>
+        <div class="hero-end">
+          <strong class="text-glow">En automático.</strong>
+          <span>Un solo sistema que trabaja por ti las 24 horas.</span>
+        </div>
+
+        <div class="scroll-cue" aria-hidden="true"><i></i>Desliza para descubrir</div>
+      </div>
+    </section>
+
+    <!-- 3. 24/7 (escena) -->
+    <section class="scene scene-247 zone-dark" data-scene aria-label="Ventajas principales">
+      <div class="scene-sticky">
+        <p class="big-247" aria-hidden="true">24/7</p>
+        <div class="trust-wrap">
+          <p>Tu sistema trabaja incluso cuando cierras.</p>
+          <ul class="trust-list">
+            <li><svg class="icon" aria-hidden="true"><use href="#i-zap"/></svg><div><b>Respuesta en segundos</b><span>Cada contacto recibe atención inmediata</span></div></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg><div><b>Activo 24/7</b><span>Tu sistema trabaja incluso cuando cierras</span></div></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-refresh"/></svg><div><b>Sin trabajo manual</b><span>Adiós a copiar y pegar datos</span></div></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg><div><b>Datos protegidos</b><span>Accesos controlados y respaldos</span></div></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. SERVICIOS (escena): galería horizontal. La altura de la escena
+         la calcula main.js según el ancho de las tarjetas. -->
+    <section class="scene scene-services zone-dark" id="servicios" data-scene data-horizontal aria-labelledby="servicios-title">
+      <div class="scene-sticky">
+        <div class="h-track">
+          <header class="h-intro">
+            <p class="eyebrow">Servicios</p>
+            <h2 id="servicios-title">Todo lo que tu negocio repite cada día, <span class="text-gradient">funcionando solo.</span></h2>
+            <p>Elige un servicio o combínalos en un sistema completo, de principio a fin.</p>
+          </header>
+          <article class="h-card"><span class="h-num" aria-hidden="true">01</span><span class="h-icon"><svg class="icon" aria-hidden="true"><use href="#i-user-plus"/></svg></span><h3>Captación de clientes</h3><p>Cuando alguien llena un formulario, escribe por WhatsApp o responde un anuncio, sus datos se guardan, se clasifican y empieza el seguimiento.</p></article>
+          <article class="h-card"><span class="h-num" aria-hidden="true">02</span><span class="h-icon"><svg class="icon" aria-hidden="true"><use href="#i-send"/></svg></span><h3>Seguimiento de ventas</h3><p>Recordatorios, mensajes y correos automáticos para las personas interesadas que todavía no han comprado.</p></article>
+          <article class="h-card"><span class="h-num" aria-hidden="true">03</span><span class="h-icon"><svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg></span><h3>Automatización de citas</h3><p>Tus clientes reservan solos y reciben confirmaciones, recordatorios y opciones para reprogramar sin que intervengas.</p></article>
+          <article class="h-card"><span class="h-num" aria-hidden="true">04</span><span class="h-icon"><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg></span><h3>CRM automatizado</h3><p>Clientes organizados como nuevos, interesados, cotizados, activos o antiguos, con acciones distintas para cada grupo.</p></article>
+          <article class="h-card"><span class="h-num" aria-hidden="true">05</span><span class="h-icon"><svg class="icon" aria-hidden="true"><use href="#i-card"/></svg></span><h3>Facturación y cobros</h3><p>Facturas, enlaces de pago y recordatorios de pendientes, con el estado del cliente actualizado en cuanto paga.</p></article>
+          <article class="h-card"><span class="h-num" aria-hidden="true">06</span><span class="h-icon"><svg class="icon" aria-hidden="true"><use href="#i-browser"/></svg></span><h3>Página web personalizada</h3><p>Web a la medida de tu marca, rápida y lista para celular, conectada a tus automatizaciones para captar clientes.</p></article>
+          <article class="h-card"><span class="h-num" aria-hidden="true">07</span><span class="h-icon"><svg class="icon" aria-hidden="true"><use href="#i-qr"/></svg></span><h3>QR personalizado</h3><p>Códigos QR con tu marca que puedes llevar a otra página aunque ya estén impresos, y que te dicen cuántas personas los escanean.</p></article>
+          <article class="h-card"><span class="h-num" aria-hidden="true">08</span><span class="h-icon"><svg class="icon" aria-hidden="true"><use href="#i-nfc"/></svg></span><h3>Google NFC stand review</h3><p>Un stand NFC en tu mostrador: tus clientes acercan el celular y dejan su reseña en Google, sin buscar nada ni escribir direcciones. Pago único de RD$3,000.</p></article>
+        </div>
+        <div class="h-progress" aria-hidden="true"><i></i></div>
+      </div>
+    </section>
+
+    <!-- 5. PARA QUIÉN ES: texto gigante que se desliza -->
+    <section class="audience zone-dark" id="para-quien" data-view aria-labelledby="quien-title">
+      <h2 class="audience-label" id="quien-title">Hecho para negocios que atienden clientes todos los días</h2>
+      <ul class="audience-row r1">
+        <li>Clínicas y consultorios</li><li>Salones de belleza y spas</li><li>Agencias</li><li>Tiendas y e‑commerce</li><li>Consultores</li><li>Inmobiliarias</li>
+      </ul>
+      <ul class="audience-row r2">
+        <li>Gimnasios y estudios</li><li>Academias y cursos</li><li>Despachos profesionales</li><li>Restaurantes</li><li>Talleres y servicios técnicos</li><li>Profesionales independientes</li>
+      </ul>
+    </section>
+
+    <!-- 6. PRODUCTO: ASCENDA SYSTEM
+         Los textos variables (módulos, días de prueba, precio y enlaces)
+         se editan en js/config.js → producto. Las capturas están en
+         assets/producto/. -->
+    <section class="section product-section zone-dark" id="sistema" aria-labelledby="sistema-title">
+      <div class="container">
+        <div class="product-top reveal">
+          <p class="eyebrow">Nuestro sistema</p>
+          <h2 id="sistema-title"><span data-producto="nombre">ASCENDA SYSTEM</span>: <span class="text-gradient">facturación e inventario</span> para todo tipo de negocio</h2>
+          <p class="lead" data-producto="descripcion">Factura, controla tu inventario y lleva tus cuentas desde una sola pantalla. Funciona en tu computadora, sin depender de internet, y se comparte con las demás cajas de tu negocio.</p>
+        </div>
+        <figure class="product-shot" data-view>
+          <div class="product-tabs" role="tablist" aria-label="Pantallas del sistema">
+            <button type="button" role="tab" aria-selected="true" data-shot="assets/producto/sistema-facturar.webp" data-alt="Pantalla de facturación de ASCENDA SYSTEM">Facturación</button>
+            <button type="button" role="tab" aria-selected="false" data-shot="assets/producto/sistema-index.webp" data-alt="Pantalla de inventario de ASCENDA SYSTEM">Inventario</button>
+            <button type="button" role="tab" aria-selected="false" data-shot="assets/producto/sistema-reportes.webp" data-alt="Pantalla de reportes de ASCENDA SYSTEM">Reportes</button>
+          </div>
+          <div class="product-frame">
+            <img src="assets/producto/sistema-facturar.webp" alt="Pantalla de facturación de ASCENDA SYSTEM" width="1440" height="860" loading="lazy" decoding="async">
+          </div>
+          <figcaption>Capturas reales del sistema con datos de ejemplo.</figcaption>
+        </figure>
+        <div class="product-bottom">
+          <ul class="product-modules reveal" data-producto-modulos aria-label="Módulos incluidos"></ul>
+          <div class="product-cta reveal">
+            <div class="hero-actions">
+              <a class="btn btn-primary btn-lg" href="#contacto" data-servicio="ASCENDA SYSTEM" data-producto-prueba>Pide tu prueba de 30 días gratis</a>
+              <a class="btn btn-outline btn-lg" href="#" data-producto-href="demoUrl" hidden>Ver demo en línea</a>
+            </div>
+            <p class="product-note">Precio: <b data-producto="precio">a consultar</b></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. MANIFIESTO (escena): las palabras se encienden al deslizar.
+         main.js separa el texto en palabras; las que llevan
+         data-hl se resaltan. -->
+    <section class="scene scene-manifesto zone-dark" data-scene aria-label="Cómo trabajamos">
+      <div class="scene-sticky">
+        <p class="eyebrow manifesto-tag">Cómo trabajamos</p>
+        <p class="manifesto" data-words>Entendemos tus procesos, conectamos tus herramientas y <span data-hl>probamos cada escenario.</span> Tú solo nos cuentas cómo trabaja tu negocio; <span data-hl>nosotros nos encargamos de la parte técnica.</span></p>
+      </div>
+    </section>
+
+    <!-- 8. CÓMO FUNCIONA (escena): un paso a la vez -->
+    <section class="scene scene-steps zone-dark" id="como-funciona" data-scene data-steps aria-labelledby="como-title">
+      <div class="scene-sticky">
+        <div class="steps-grid-bg" aria-hidden="true"></div>
+        <div class="container steps-layout">
+          <div class="steps-head">
+            <p class="eyebrow">Cómo funciona</p>
+            <h2 id="como-title">De la idea a un sistema funcionando, en 4 pasos</h2>
+            <p>Nos encargamos de la parte técnica. Tú solo nos cuentas cómo trabaja tu negocio.</p>
+            <div class="steps-counter" aria-hidden="true"><b data-step-now>01</b><span>/ 04</span></div>
+            <div class="steps-dots" aria-hidden="true"><i class="is-on"></i><i></i><i></i><i></i></div>
+          </div>
+          <ol class="steps-stage">
+            <li class="step is-active"><span class="step-num" aria-hidden="true">1</span><h3>Conversamos sobre tu negocio</h3><p>Entendemos tus procesos, tus herramientas y dónde estás perdiendo tiempo o clientes.</p></li>
+            <li class="step"><span class="step-num" aria-hidden="true">2</span><h3>Diseñamos tu automatización</h3><p>Te proponemos un flujo claro, con cada paso y mensaje, antes de construir nada.</p></li>
+            <li class="step"><span class="step-num" aria-hidden="true">3</span><h3>La implementamos y probamos</h3><p>Conectamos tus herramientas y probamos cada escenario para que todo funcione desde el primer día.</p></li>
+            <li class="step"><span class="step-num" aria-hidden="true">4</span><h3>Tú vendes, nosotros optimizamos</h3><p>Monitoreamos resultados y mejoramos el sistema a medida que tu negocio crece.</p></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. RECORRIDO DEL CLIENTE: las etapas se encienden en orden -->
+    <section class="section zone-dark" id="flujo" aria-labelledby="flujo-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">El recorrido de tu cliente</p>
+          <h2 id="flujo-title">Un flujo conectado, del primer mensaje al reporte</h2>
+          <p>Cada etapa activa la siguiente de forma automática.</p>
+        </header>
+        <ol class="flow" aria-label="Recorrido automatizado del cliente">
+          <li class="flow-node" data-lit style="--i:0"><span class="flow-icon"><svg class="icon" aria-hidden="true"><use href="#i-user-plus"/></svg></span><b>Lead</b><small>Llega un contacto</small></li>
+          <li class="flow-node" data-lit style="--i:1"><span class="flow-icon"><svg class="icon" aria-hidden="true"><use href="#i-filter"/></svg></span><b>Clasificación</b><small>Se etiqueta solo</small></li>
+          <li class="flow-node" data-lit style="--i:2"><span class="flow-icon"><svg class="icon" aria-hidden="true"><use href="#i-send"/></svg></span><b>Seguimiento</b><small>Mensajes y correos</small></li>
+          <li class="flow-node" data-lit style="--i:3"><span class="flow-icon"><svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg></span><b>Cita</b><small>Reserva y recordatorio</small></li>
+          <li class="flow-node" data-lit style="--i:4"><span class="flow-icon"><svg class="icon" aria-hidden="true"><use href="#i-check-circle"/></svg></span><b>Venta</b><small>Cliente activo</small></li>
+          <li class="flow-node" data-lit style="--i:5"><span class="flow-icon"><svg class="icon" aria-hidden="true"><use href="#i-file"/></svg></span><b>Factura</b><small>Cobro automático</small></li>
+          <li class="flow-node" data-lit style="--i:6"><span class="flow-icon"><svg class="icon" aria-hidden="true"><use href="#i-chart"/></svg></span><b>Reporte</b><small>Resultados claros</small></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 10. BENEFICIOS: cada título se "llena" al pasar -->
+    <section class="section" id="beneficios" aria-labelledby="beneficios-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">Beneficios</p>
+          <h2 id="beneficios-title">Más resultados con el mismo equipo</h2>
+        </header>
+        <div class="benefits-list">
+          <article class="benefit" data-lit><h3>Ahorro de tiempo</h3><p>Las tareas repetitivas se hacen solas y tu equipo se enfoca en lo que de verdad importa.</p></article>
+          <article class="benefit" data-lit><h3>Menos clientes perdidos</h3><p>Nadie se queda sin respuesta ni sin seguimiento, aunque llegue a medianoche.</p></article>
+          <article class="benefit" data-lit><h3>Cobros más rápidos</h3><p>Enlaces de pago y recordatorios automáticos reducen las facturas olvidadas.</p></article>
+          <article class="benefit" data-lit><h3>Información clara para decidir</h3><p>Ves en un solo lugar qué funciona, qué vende y dónde mejorar.</p></article>
+          <article class="benefit" data-lit><h3>Escalable</h3><p>Atiende a más clientes sin contratar más personal para tareas operativas.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. PLANES
+         EDITABLE: el contenido de estas tarjetas es de ejemplo.
+         Ajusta nombres, listas y textos según tu oferta real. -->
+    <section class="section section-alt" id="planes" aria-labelledby="planes-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">Planes</p>
+          <h2 id="planes-title">Un plan para cada etapa de tu negocio</h2>
+          <p>Cada negocio es distinto: te enviamos una cotización a la medida.</p>
+        </header>
+        <div class="plans-grid">
+          <article class="plan reveal">
+            <h3>Básico</h3>
+            <p class="plan-desc">Para empezar a automatizar lo esencial.</p>
+            <p class="plan-price"><small>Desde:</small> a consultar</p>
+            <ul class="plan-list">
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Captación de clientes</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Respuesta automática en WhatsApp</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>1 flujo de seguimiento</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Soporte por correo</li>
+            </ul>
+            <a class="btn btn-outline btn-block" href="#contacto" data-servicio="Plan Básico">Solicitar cotización</a>
+          </article>
+          <article class="plan plan-featured reveal">
+            <span class="plan-badge">Más elegido</span>
+            <h3>Profesional</h3>
+            <p class="plan-desc">Para vender y cobrar en piloto automático.</p>
+            <p class="plan-price"><small>Desde:</small> a consultar</p>
+            <ul class="plan-list">
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Todo lo del plan Básico</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>CRM automatizado</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Automatización de citas</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Facturación y cobros</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Reporte mensual</li>
+            </ul>
+            <a class="btn btn-primary btn-block" href="#contacto" data-servicio="Plan Profesional">Solicitar cotización</a>
+          </article>
+          <article class="plan reveal">
+            <h3>Personalizado</h3>
+            <p class="plan-desc">Para procesos complejos o varios equipos.</p>
+            <p class="plan-price"><small>Desde:</small> a consultar</p>
+            <ul class="plan-list">
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Flujos a la medida</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Integraciones con tus sistemas</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Dashboards en tiempo real</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Soporte prioritario</li>
+            </ul>
+            <a class="btn btn-outline btn-block" href="#contacto" data-servicio="Plan Personalizado">Solicitar cotización</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 12. TESTIMONIOS
+         PLACEHOLDER: reemplaza estos textos por testimonios reales
+         (con permiso del cliente). Mientras digan "[Testimonio de ejemplo]"
+         la sección se oculta sola. -->
+    <section class="section" id="testimonios" aria-labelledby="testimonios-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">Testimonios</p>
+          <h2 id="testimonios-title">Lo que dicen nuestros clientes</h2>
+        </header>
+        <div class="testimonials">
+          <figure class="testimonial reveal">
+            <svg class="icon quote-icon" aria-hidden="true"><use href="#i-quote"/></svg>
+            <blockquote><p>[Testimonio de ejemplo] Texto del testimonio del cliente. Reemplazar por una opinión real sobre los resultados obtenidos.</p></blockquote>
+            <figcaption><span class="avatar-initials" aria-hidden="true">NC</span><span><b>Nombre del cliente</b><small>Cargo, empresa</small></span></figcaption>
+          </figure>
+          <figure class="testimonial reveal">
+            <svg class="icon quote-icon" aria-hidden="true"><use href="#i-quote"/></svg>
+            <blockquote><p>[Testimonio de ejemplo] Texto del testimonio del cliente. Reemplazar por una opinión real sobre los resultados obtenidos.</p></blockquote>
+            <figcaption><span class="avatar-initials" aria-hidden="true">NC</span><span><b>Nombre del cliente</b><small>Cargo, empresa</small></span></figcaption>
+          </figure>
+          <figure class="testimonial reveal">
+            <svg class="icon quote-icon" aria-hidden="true"><use href="#i-quote"/></svg>
+            <blockquote><p>[Testimonio de ejemplo] Texto del testimonio del cliente. Reemplazar por una opinión real sobre los resultados obtenidos.</p></blockquote>
+            <figcaption><span class="avatar-initials" aria-hidden="true">NC</span><span><b>Nombre del cliente</b><small>Cargo, empresa</small></span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- 13. PREGUNTAS FRECUENTES -->
+    <section class="section section-alt" id="preguntas" aria-labelledby="faq-title">
+      <div class="container faq-grid">
+        <header class="section-head reveal">
+          <p class="eyebrow">Preguntas frecuentes</p>
+          <h2 id="faq-title">Resolvemos tus dudas</h2>
+        </header>
+        <div class="faq reveal">
+          <details class="faq-item">
+            <summary>¿Qué necesito para empezar?<svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+            <p>Solo una conversación inicial. Revisamos qué herramientas usas hoy (WhatsApp, correo, hojas de cálculo, agenda, sistema de facturación) y qué procesos quieres automatizar. No necesitas conocimientos técnicos ni cambiar todo lo que ya tienes.</p>
+          </details>
+          <details class="faq-item">
+            <summary>¿Cuánto tarda la implementación?<svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+            <p>Depende de cuántos procesos y herramientas haya que conectar. Una automatización sencilla puede estar lista en pocos días, mientras que un sistema completo se implementa por etapas. En la propuesta te damos un calendario claro.</p>
+          </details>
+          <details class="faq-item">
+            <summary>¿Funciona con mi WhatsApp actual?<svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+            <p>En la mayoría de los casos sí. Trabajamos con WhatsApp Business y con su API oficial. Te explicamos qué opción conviene según tu volumen de mensajes y si necesitas varios usuarios atendiendo el mismo número.</p>
+          </details>
+          <details class="faq-item">
+            <summary>¿Mis datos y los de mis clientes están seguros?<svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+            <p>Sí. Usamos plataformas reconocidas, accesos con permisos limitados y buenas prácticas de seguridad. La información es tuya: no la vendemos ni la compartimos, y puedes solicitar una copia o su eliminación cuando quieras.</p>
+          </details>
+          <details class="faq-item">
+            <summary>¿Tengo que cambiar las herramientas que ya uso?<svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+            <p>No necesariamente. Siempre que es posible conectamos lo que ya usas. Si alguna herramienta no permite integraciones, te recomendamos alternativas y te ayudamos con la migración.</p>
+          </details>
+          <details class="faq-item">
+            <summary>¿Puedo cancelar el servicio?<svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+            <p>Sí. Las condiciones de permanencia y cancelación quedan por escrito en la propuesta antes de empezar, sin letra pequeña. Si cancelas, te entregamos tu información y la documentación de tus flujos.</p>
+          </details>
+          <details class="faq-item">
+            <summary>¿Ofrecen soporte después de la implementación?<svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+            <p>Sí. Monitoreamos que las automatizaciones funcionen, resolvemos incidencias y hacemos ajustes cuando cambian tus procesos. El nivel de soporte depende del plan contratado.</p>
+          </details>
+          <details class="faq-item">
+            <summary>¿Necesito contratar a alguien técnico para mantenerlo?<svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+            <p>No. Nosotros nos encargamos del mantenimiento y te capacitamos para que tú y tu equipo usen el sistema en el día a día sin complicaciones.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- 14. CTA FINAL -->
+    <section class="cta-section" aria-labelledby="cta-title">
+      <div class="container">
+        <div class="cta-box reveal">
+          <h2 id="cta-title">¿Listo para automatizar tu negocio?</h2>
+          <p>Agenda una llamada de 30 minutos y arranca tu demo gratis de 7 días: la probamos con tu negocio y ves qué procesos puedes automatizar desde esta semana.</p>
+          <div class="cta-actions">
+            <a class="btn btn-light btn-lg" href="#agenda">Empieza tu demo gratis de 7 días <svg class="icon icon-arrow" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+            <a class="btn btn-ghost-light btn-lg" href="#" data-config-href="whatsapp" target="_blank" rel="noopener">
+              <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg>Escríbenos por WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 15. AGENDA DE DEMOS (módulo de citas) -->
+    <section class="section section-alt" id="agenda" aria-labelledby="agenda-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">Agenda</p>
+          <h2 id="agenda-title">Empieza tu demo gratis de 7 días con una llamada de <span data-config-text="citas.duracionMin">30</span> minutos</h2>
+          <p>La llamada es el arranque de tu demo: durante 7 días ves la automatización funcionando en tu negocio, sin costo. Elige el día y la hora que te queden mejor; te llega a tu correo la invitación con el enlace de Google Meet.</p>
+        </header>
+        <div class="booking card reveal" id="booking">
+          <div class="booking-picker">
+            <h3 class="booking-label">1. Elige un día</h3>
+            <div class="booking-days" id="booking-days" role="group" aria-label="Días disponibles"></div>
+            <h3 class="booking-label">2. Elige una hora <small class="booking-tz" id="booking-tz"></small></h3>
+            <div class="booking-slots" id="booking-slots" role="group" aria-label="Horarios disponibles"></div>
+            <p class="booking-msg" id="booking-msg" aria-live="polite">Cargando horarios…</p>
+          </div>
+          <form class="booking-form" id="booking-form" novalidate>
+            <h3 class="booking-label">3. Tus datos</h3>
+            <p class="booking-summary" id="booking-summary" aria-live="polite">Aún no eliges horario.</p>
+            <div class="field">
+              <label for="b-nombre">Nombre <span aria-hidden="true">*</span></label>
+              <input id="b-nombre" name="nombre" type="text" autocomplete="name" required minlength="2" aria-describedby="eb-nombre">
+              <p class="field-error" id="eb-nombre" aria-live="polite"></p>
+            </div>
+            <div class="field">
+              <label for="b-correo">Correo electrónico <span aria-hidden="true">*</span></label>
+              <input id="b-correo" name="correo" type="email" autocomplete="email" required aria-describedby="eb-correo">
+              <p class="field-error" id="eb-correo" aria-live="polite"></p>
+            </div>
+            <div class="field">
+              <label for="b-telefono">Teléfono <span aria-hidden="true">*</span></label>
+              <input id="b-telefono" name="telefono" type="tel" autocomplete="tel" required aria-describedby="eb-telefono">
+              <p class="field-error" id="eb-telefono" aria-live="polite"></p>
+            </div>
+            <div class="field">
+              <label for="b-mensaje">¿Qué te gustaría automatizar? <small>(opcional)</small></label>
+              <textarea id="b-mensaje" name="mensaje" rows="3"></textarea>
+            </div>
+            <div class="hp" aria-hidden="true">
+              <label for="b-web">No llenar este campo</label>
+              <input id="b-web" name="web" type="text" tabindex="-1" autocomplete="off">
+            </div>
+            <div class="field field-check">
+              <input id="b-privacidad" name="privacidad" type="checkbox" required aria-describedby="eb-privacidad">
+              <label for="b-privacidad">He leído y acepto la <a href="privacidad.html" target="_blank" rel="noopener">Política de privacidad</a>. <span aria-hidden="true">*</span></label>
+              <p class="field-error" id="eb-privacidad" aria-live="polite"></p>
+            </div>
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Confirmar cita</button>
+            <div class="form-status" role="status" aria-live="polite" hidden></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- 16. CONTACTO -->
+    <section class="section" id="contacto" aria-labelledby="contacto-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">Contacto</p>
+          <h2 id="contacto-title">Cuéntanos sobre tu negocio</h2>
+          <p>Respondemos lo antes posible con los siguientes pasos.</p>
+        </header>
+        <div class="contact-grid">
+          <form class="card contact-form reveal" id="contact-form" novalidate>
+            <div class="form-row">
+              <div class="field">
+                <label for="f-nombre">Nombre <span aria-hidden="true">*</span></label>
+                <input id="f-nombre" name="nombre" type="text" autocomplete="name" required minlength="2" aria-describedby="e-nombre">
+                <p class="field-error" id="e-nombre" aria-live="polite"></p>
+              </div>
+              <div class="field">
+                <label for="f-correo">Correo electrónico <span aria-hidden="true">*</span></label>
+                <input id="f-correo" name="correo" type="email" autocomplete="email" required aria-describedby="e-correo">
+                <p class="field-error" id="e-correo" aria-live="polite"></p>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="field">
+                <label for="f-telefono">Teléfono <span aria-hidden="true">*</span></label>
+                <input id="f-telefono" name="telefono" type="tel" autocomplete="tel" required aria-describedby="e-telefono">
+                <p class="field-error" id="e-telefono" aria-live="polite"></p>
+              </div>
+              <div class="field">
+                <label for="f-servicio">Servicio de interés <span aria-hidden="true">*</span></label>
+                <select id="f-servicio" name="servicio" required aria-describedby="e-servicio">
+                  <option value="">Selecciona una opción</option>
+                  <option>Demo gratis (7 días)</option>
+                  <option>Automatización de citas</option>
+                  <option>Página web personalizada</option>
+                  <option>QR personalizado</option>
+                  <option>Google NFC stand review</option>
+                  <option>Tarjeta de fidelidad</option>
+                  <option>ASCENDA SYSTEM</option>
+                  <option>Plan Básico</option>
+                  <option>Plan Profesional</option>
+                  <option>Plan Personalizado</option>
+                  <option>Otro</option>
+                </select>
+                <p class="field-error" id="e-servicio" aria-live="polite"></p>
+              </div>
+            </div>
+            <div class="field">
+              <label for="f-mensaje">Mensaje <span aria-hidden="true">*</span></label>
+              <textarea id="f-mensaje" name="mensaje" rows="4" required minlength="10" placeholder="¿Qué te gustaría automatizar?" aria-describedby="e-mensaje"></textarea>
+              <p class="field-error" id="e-mensaje" aria-live="polite"></p>
+            </div>
+            <!-- Campo trampa anti-spam: debe quedar vacío -->
+            <div class="hp" aria-hidden="true">
+              <label for="f-web">No llenar este campo</label>
+              <input id="f-web" name="web" type="text" tabindex="-1" autocomplete="off">
+            </div>
+            <div class="field field-check">
+              <input id="f-privacidad" name="privacidad" type="checkbox" required aria-describedby="e-privacidad">
+              <label for="f-privacidad">He leído y acepto la <a href="privacidad.html" target="_blank" rel="noopener">Política de privacidad</a>. <span aria-hidden="true">*</span></label>
+              <p class="field-error" id="e-privacidad" aria-live="polite"></p>
+            </div>
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Enviar mensaje</button>
+            <div class="form-status" role="status" aria-live="polite" hidden></div>
+          </form>
+
+          <aside class="contact-info reveal" aria-label="Datos de contacto">
+            <ul class="contact-list">
+              <li>
+                <span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg></span>
+                <div><small>Teléfono</small><a href="#" data-config-href="telefono" data-config-text="contacto.telefonoVisible">PENDIENTE</a></div>
+              </li>
+              <li>
+                <span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg></span>
+                <div><small>WhatsApp</small><a href="#" data-config-href="whatsapp" data-config-text="contacto.whatsappVisible" target="_blank" rel="noopener">PENDIENTE</a></div>
+              </li>
+              <li>
+                <span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></span>
+                <div><small>Correo</small><a href="#" data-config-href="correo" data-config-text="contacto.correo">PENDIENTE</a></div>
+              </li>
+              <li>
+                <span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg></span>
+                <div><small>Dirección</small><a href="#" data-config-href="mapa" data-config-text="contacto.direccion" target="_blank" rel="noopener">PENDIENTE</a></div>
+              </li>
+              <li>
+                <span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg></span>
+                <div><small>Horario</small><span data-config-text="contacto.horario">PENDIENTE</span></div>
+              </li>
+            </ul>
+            <div class="contact-social">
+              <small>Síguenos</small>
+              <ul class="social-list" data-config-social></ul>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+    <!-- 17. FIRMA: el nombre se dibuja al llegar al final -->
+    <section class="signature" data-lit="once" aria-hidden="true">
+      <div class="container">
+        <svg viewBox="0 0 1200 230" preserveAspectRatio="xMidYMid meet">
+          <line class="sig-guide" x1="0" y1="34" x2="1200" y2="34"/>
+          <line class="sig-guide" x1="0" y1="190" x2="1200" y2="190"/>
+          <text class="sig-text" x="600" y="190" text-anchor="middle" textLength="1120" lengthAdjust="spacingAndGlyphs">ASCENDA</text>
+          <rect class="sig-handle" x="34" y="28" width="12" height="12"/><rect class="sig-handle" x="1154" y="28" width="12" height="12"/>
+          <rect class="sig-handle" x="34" y="184" width="12" height="12"/><rect class="sig-handle" x="1154" y="184" width="12" height="12"/>
+          <circle class="sig-dot" cx="600" cy="34" r="4"/><circle class="sig-dot" cx="600" cy="190" r="4"/>
+        </svg>
+        <p>Automatización online para negocios</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- 18. FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="#inicio" aria-label="Ascenda, ir al inicio">
+          <img class="footer-logo" src="assets/logo-completo-claro.png" alt="Ascenda" width="720" height="413" loading="lazy">
+        </a>
+        <p>Automatizamos la captación, el seguimiento y el cobro de clientes para que tu negocio crezca sin trabajo manual.</p>
+        <ul class="social-list" data-config-social></ul>
+      </div>
+      <nav class="footer-nav" aria-label="Enlaces rápidos">
+        <h3>Enlaces</h3>
+        <ul>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#sistema">Sistema</a></li>
+          <li><a href="#como-funciona">Cómo funciona</a></li>
+          <li><a href="#beneficios">Beneficios</a></li>
+          <li><a href="#planes">Planes</a></li>
+          <li><a href="#preguntas">Preguntas</a></li>
+          <li><a href="#agenda">Agenda</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+      <div class="footer-nav">
+        <h3>Contacto</h3>
+        <ul>
+          <li><a href="#" data-config-href="correo" data-config-text="contacto.correo">PENDIENTE</a></li>
+          <li><a href="#" data-config-href="telefono" data-config-text="contacto.telefonoVisible">PENDIENTE</a></li>
+          <li><span data-config-text="contacto.horario">PENDIENTE</span></li>
+        </ul>
+      </div>
+      <div class="footer-nav">
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="privacidad.html">Política de privacidad</a></li>
+          <li><a href="terminos.html">Términos y condiciones</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© <span data-year></span> <span data-config-text="empresa.nombre">Ascenda</span>. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Botón flotante de WhatsApp -->
+  <a class="whatsapp-float" href="#" data-config-href="whatsapp" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
+    <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+  </a>
+
+  <!-- Volver arriba -->
+  <button class="back-to-top" type="button" aria-label="Volver arriba">
+    <svg class="icon" aria-hidden="true"><use href="#i-arrow-up"/></svg>
+  </button>
+</body>
+</html>
