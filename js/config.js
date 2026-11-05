@@ -14,7 +14,7 @@ window.SITE_CONFIG = {
     nombre: "Ascenda", // PENDIENTE: confirmar nombre comercial
     eslogan: "Automatización online para negocios",
     // URL pública del sitio, sin barra final (se usa en SEO y JSON-LD)
-    url: "https://www.PENDIENTE.com",
+    url: "https://ascenda-landing-phi.vercel.app",
     logo: "assets/logo.png"
   },
 

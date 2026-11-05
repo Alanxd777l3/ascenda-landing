@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # PENDIENTE: reemplazar por el dominio real
-Sitemap: https://www.PENDIENTE.com/sitemap.xml
+Sitemap: https://ascenda-landing-phi.vercel.app/sitemap.xml
